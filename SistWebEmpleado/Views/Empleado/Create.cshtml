@@ -1,0 +1,49 @@
+﻿@model SistemaWebEmpleado.Models.Empleado
+@{
+    ViewData["Title"] = "Creacion de empleados";
+}
+
+<h1>Ingresar un nuevo medico</h1>
+@using (Html.BeginForm("Create", "Empleado", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(model => model.Nombre)
+        @Html.TextBoxFor(model => model.Nombre)
+        @Html.ValidationMessageFor(model => model.Nombre)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Apellido)
+        @Html.TextBoxFor(model => model.Apellido)
+        @Html.ValidationMessageFor(model => model.Apellido)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.DNI)
+        @Html.TextBoxFor(model => model.DNI)
+        @Html.ValidationMessageFor(model => model.DNI)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Legajo)
+        @Html.TextBoxFor(model => model.Legajo)
+        @Html.ValidationMessageFor(model => model.Legajo)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.FechaNacimiento)
+        @Html.TextBoxFor(model => model.FechaNacimiento)
+        @Html.ValidationMessageFor(model => model.FechaNacimiento)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Título)
+        @Html.TextBoxFor(model => model.Título)
+        @Html.ValidationMessageFor(model => model.Título)
+    </p>
+
+
+
+    <input type="submit" action="Create" />
+    @Html.ActionLink("Volver al Index", "Index", "Empleado")
+}

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="principal">
+        <div class="navbar">
+            <p> Software Empleados</p>
+        </div>
+        <aside class="sidebar1">
+            @if (IsSectionDefined("SideBar"))
+            {
+                @RenderSection("SideBar")
+            }
+            else
+            {
+                <div class="sidebar1">
+                    <h1>
+                    Administración de empleados
+                </h1>
+                <img src="https://cdn-icons-png.flaticon.com/512/5221/5221822.png" alt="imagen" />
+                </div>
+
+            }
+        </aside>
+        <div class="navbar2">
+            <div class="links">
+
+                @Html.ActionLink("Home", "Index", "Home")
+                @Html.ActionLink("Create", "Create", "Empleado")
+                @Html.ActionLink("Ir a los empleados","Index","Empleado")
+
+            </div>
+        </div>
+
+        <div class="bodyid">
+            
+            <div class="renderbody">
+                @RenderBody()
+
+            </div>
+        </div>
+        <div class="footer">
+
+            <h2>Contacto: info@empelados.com</h2>
+
+        </div>
+
+    </div>
+</body>
+</html>
